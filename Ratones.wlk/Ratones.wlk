@@ -1,4 +1,4 @@
-Mickey {
+class Mickey {
 	
 	var property plata
 	
@@ -14,6 +14,16 @@ Mickey {
 	
 	method comprarUnaCompania(){
 		
+		
+	}
+	
+	method realizarAccionesNAZI(algoAInvertir){
+		if(plata > 0){
+			return self.hacerInversiones(algoAInvertir)
+			
+		}else{
+			return self.error("Me quede sin guita")
+		}
 		
 	}
 	
@@ -69,8 +79,8 @@ class Pelicula {
 		return actores.map({unActor => unActor.darSueldo()})
 	}
 	
-	method darSueldo(){
-		
+	method darSueldo(actor, dinero){
+		actor.sumateTuSueldo(dinero)
 	}
 	
 	
@@ -80,12 +90,29 @@ class Pelicula {
 	}
 }
 
-object peliculaIndependiente inherits Pelicula {
+class Actor {
 	
-	var property actores = []
+	var property fondosPorPelicula = []
 	
-	override method costoDeProduccion(){
-		
+	method sumateTuSueldo(dinero){
+		 fondosPorPelicula.add(dinero)
 		
 	}
+}
+
+object peliculaIndependiente inherits Pelicula {
+	
+	
+	//override method costoDeProduccion(){
+		
+		
+	//}
+}
+
+object flautista {
+	
+	method tocarLaFlauta(){
+		ratonesAmbiciosos.realizarAccionesNAZI()
+	}
+	
 }
