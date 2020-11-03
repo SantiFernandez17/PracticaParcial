@@ -13,24 +13,36 @@ class Cerveza {
 		marca.graduacionAlcoholica()
 	}
 	
+	method graduacionDeAlcoholAporta(marca){
+		return capacidadEnLitros * marca.graduacionAlcoholica()
+	}
+	//Saber cuántos litros de alcohol aporta una jarra de cerveza. Ej: una jarra de
+//cerveza de medio litro de la marca ‘Hofbräu’ (que tiene 8% de graduación
+//alcohólica) aporta 0,5 * 0,08 = 0,04 litros de alcohol. 
+	
 }
 
 class MarcaDeCerveza {
 	
-	var paisDeOrigen
+//	var paisDeOrigen
 	
-	var property graduacionEnAlcohol
+	var porcentajeDeGraduacionDeAlcohol
+	
+	method porcentajeDeGraduacionDeAlcohol(){
+		porcentajeDeGraduacionDeAlcohol = porcentajeDeGraduacionDeAlcohol / 100
+		return porcentajeDeGraduacionDeAlcohol
+	}
 	
 	method graduacionAlcoholica(){
-		return graduacionEnAlcohol
+		return porcentajeDeGraduacionDeAlcohol
 	}
 	
 	method paisDeOrigen(pais){
-		paisDeOrigen = pais
+//		paisDeOrigen = pais
 	}
 	
 	method masDeXGraduacionAlcoholica(cantidad){
-		return graduacionEnAlcohol < cantidad
+		return porcentajeDeGraduacionDeAlcohol < cantidad
 	}
 }
 
@@ -77,7 +89,3 @@ object alemanes {
 	}
 }
 
-
-//Saber cuántos litros de alcohol aporta una jarra de cerveza. Ej: una jarra de
-//cerveza de medio litro de la marca ‘Hofbräu’ (que tiene 8% de graduación
-//alcohólica) aporta 0,5 * 0,08 = 0,04 litros de alcohol. 
