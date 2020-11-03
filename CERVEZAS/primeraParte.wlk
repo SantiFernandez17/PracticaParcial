@@ -4,7 +4,7 @@ class Carpas {
 }
 
 class Cerveza {
-	var capacidadEnLitros
+	var property capacidadEnLitros
 	
 	var marcaDeCerveza
 	
@@ -16,6 +16,7 @@ class Cerveza {
 	method graduacionDeAlcoholAporta(marca){
 		return capacidadEnLitros * marca.graduacionAlcoholica()
 	}
+
 	//Saber cuántos litros de alcohol aporta una jarra de cerveza. Ej: una jarra de
 //cerveza de medio litro de la marca ‘Hofbräu’ (que tiene 8% de graduación
 //alcohólica) aporta 0,5 * 0,08 = 0,04 litros de alcohol. 
@@ -64,6 +65,10 @@ class Persona {
 		return (alcholEnSangre * peso) > aguante
 		
 	}
+	
+	method cuantosLitrosBebiste(cerveza){
+		return jarrasCompradasHastaElMomento * cerveza.capacidadEnLitros()
+	}
 }
 
 object belgas {
@@ -88,4 +93,3 @@ object alemanes {
 		return true
 	}
 }
-
