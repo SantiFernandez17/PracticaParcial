@@ -1,0 +1,106 @@
+class Carpas {
+	var limiteDeGente
+	
+	var property hayMusica
+
+	var property listaDeMarcasDeCervezasQueSeVenden = []
+	
+	
+	method vendeEstaMarcaDeCervezas(cerveza){
+			
+		return listaDeMarcasDeCervezasQueSeVenden.contains(cerveza)
+	}
+	
+
+}
+class Cerveza {
+	var property capacidadEnLitros
+	
+	var marcaDeCerveza
+	
+	
+	method graduacionAlcholicaDependeLaMarca(marca){
+		marca.graduacionAlcoholica()
+	}
+	
+	method graduacionDeAlcoholAporta(marca){
+		return capacidadEnLitros * marca.graduacionAlcoholica()
+	}
+}
+
+class MarcaDeCerveza {
+	
+//	var paisDeOrigen
+	
+	var porcentajeDeGraduacionDeAlcohol
+	
+	method porcentajeDeGraduacionDeAlcohol(){
+		porcentajeDeGraduacionDeAlcohol = porcentajeDeGraduacionDeAlcohol / 100
+		return porcentajeDeGraduacionDeAlcohol
+	}
+	
+	method graduacionAlcoholica(){
+		return porcentajeDeGraduacionDeAlcohol
+	}
+	
+	method paisDeOrigen(pais){
+//		paisDeOrigen = pais
+	}
+	
+	method masDeXGraduacionAlcoholica(cantidad){
+		return porcentajeDeGraduacionDeAlcohol < cantidad
+	}
+}
+
+class Persona {
+	
+	var peso
+	
+	var jarrasCompradasHastaElMomento
+	
+	const leGustaEscucharMusica
+	
+	var aguante
+	
+	var alcholEnSangre
+	
+	var marcaFavoritaDeCervezas
+	
+	method estaEbria(){
+		return (alcholEnSangre * peso) > aguante
+		
+	}
+	
+	method cuantosLitrosBebiste(cerveza){
+		return jarrasCompradasHastaElMomento * cerveza.capacidadEnLitros()
+	}
+	
+	method quiereEntrarACarpa(carpa,cervezaPreferida){
+		return carpa.vendeEstaMarcaDeCervezas(cervezaPreferida) && carpa.hayMusica()
+		}
+	
+}
+
+object belgas {
+	
+	method marcaDeCervezaPreferida(marca, belgica){
+		
+		return marca.paisDeOrigen(belgica) 
+		
+	}
+}
+
+object checos {
+	
+	method marcaDeCervezaPreferida(marca){
+		return marca.masDeXGraduacionAlcoholica(8)
+	}
+}
+
+object alemanes {
+	
+	
+	method gustoDeCervezaPreferido(){
+		return true
+	}
+}
